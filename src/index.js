@@ -1,8 +1,19 @@
 import express from 'express';
+import consign from 'consign';
+
+
 const app = express();
 
-app.set('port',process.env.port || 3000);
+consign({
+    cwd: __dirname
+})
+  .include('libs/config.js')
+  .then('db_connect.js')
+  .then('libs/middlewares.js')
+  .then('routes')
+  .then('libs/boot.js')
+  
+  .into(app)
 
-app.listen(app.get('port'), () => {
-    console.log('Server running on port: ',app.get('port'));
-});
+
+
