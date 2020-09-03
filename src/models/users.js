@@ -8,32 +8,16 @@ module.exports = (sequelize, DataType) => {
           autoIncrement: true
         },
         name: {
-          type: DataType.STRING,
-          allowNull: false,
-          validate: {
-            notEmpty: true
-          }
+          type: DataType.STRING
         },
-        lastName: {
-          type: DataType.STRING,
-          allowNull: false,
-          validate: {
-            notEmpty: true
-          }
+        lastname: {
+          type: DataType.STRING
         },
         birthday: {
-          type: DataType.DATE,
-          allowNull: false,
-          validate: {
-            notEmpty: true
-          }
+          type: DataType.DATE
         },
         dni: {
-          type: DataType.INTEGER,
-          allowNull: false,
-          validate: {
-            notEmpty: true
-          }
+          type: DataType.INTEGER
         }
       });
     return Users;

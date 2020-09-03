@@ -19,11 +19,10 @@ module.exports = app => {
       models: {} 
     };
     
-    const dir = path.join(__dirname, 'models/users');
+    const dir = path.join(__dirname, 'models/users.js');
     const model = sequelize.import(dir);
     db.models[model.name] = model;
     
-    console.log('db ',db.models);
 
   }
 
