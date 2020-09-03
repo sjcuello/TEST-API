@@ -1,5 +1,10 @@
 module.exports = app => {
-    app.listen(app.get('port'), () => {
-        console.log('Server running on port: ',app.get('port'));
+
+    app.db_connect.sequelize.sync().done(()=>{
+        app.listen(app.get('port'), () => {
+            console.log('Server running on port: ',app.get('port'));
+        });
     });
+
+    
 };
